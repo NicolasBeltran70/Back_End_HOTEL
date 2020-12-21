@@ -27,6 +27,20 @@ db_habitaciones = [{"id_habitacion": 555,
                     ]
 
 #llamado --> GET
+
+def get_Idhabitacion(tipo : str):
+    
+    for habitacion in db_habitaciones:#for por habitacion
+        if habitacion["tipo_habitacion"]== tipo:
+            return habitacion["id_habitacion"]
+
+def get_camas_habi(id : int):
+    
+    for habitacion in db_habitaciones:#for por habitacion
+        if habitacion["id_habitacion"]== id:
+            return habitacion["num_camas_habitacion"]
+
+
 def get_habitacion(id : int):
 
     for habitacion in db_habitaciones:#for por habitacion
@@ -68,4 +82,3 @@ def delete_habitacion(id: int):
     except:
         return None
     
-
