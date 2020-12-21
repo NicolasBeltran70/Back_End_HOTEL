@@ -13,32 +13,43 @@ class CalendarioInDB(BaseModel):
 
 db_calendario = [{"id_calendario": 1111,
                   "id_habitacion": 555,
-                  "fecha": "20/12/2020",
+                  "fecha": "2020/12/20",
                   "disponibilidad": True,
                   "precio": 50000},
 
                  {"id_calendario": 1112,
                   "id_habitacion": 555,
-                  "fecha": "21/12/2020",
+                  "fecha": "2020/12/21",
                   "disponibilidad": True,
                   "precio": 50000},
 
                  {"id_calendario": 1113,
                   "id_habitacion": 555,
-                  "fecha": "22/12/2020",
+                  "fecha": "2020/12/22",
                   "disponibilidad": True,
                   "precio": 50000},
 
                  {"id_calendario": 1114,
                   "id_habitacion": 555,
-                  "fecha": "23/12/2020",
+                  "fecha": "2020/12/23",
+                  "disponibilidad": True,
+                  "precio": 50000},
+
+                  {"id_calendario": 1115,
+                  "id_habitacion": 555,
+                  "fecha": "2020/12/24",
                   "disponibilidad": False,
-                  "precio": 50000}
+                  "precio": 60000}
 
                    ]
 
 
 #llamado --> GET
+
+def all_calendario():#trae todo el calendario
+    return db_calendario 
+
+
 def get_calendario(id : int):
     
     for calen in db_calendario:#for por habitacion
@@ -64,3 +75,4 @@ def update_calendario(calendario: CalendarioInDB):
             db_calendario[p_calendario] = calendario
 
             return calendario
+
