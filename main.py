@@ -15,7 +15,20 @@ from fastapi import HTTPException
 api = FastAPI()
 ########################################### CONSULTA DE CALENDARIO #########################################
 @api.get("/info/calendario")
-async def Consulta_calendario(f_ini: str, f_fin: str,t_habitacion: str,n_personas: int):
+async def Consulta_calendario(fid:int,fim:int,fia:int, ffd:int,ffm:int,ffa:int, t_habitacion: str,n_personas: int):
+
+    xfid=str(fid)
+    xfim=str(fim)
+    xfia=str(fia)
+
+    f_ini=xfia+"/"+xfim+"/"+xfid
+
+    yffd=str(ffd)
+    yffm=str(ffm)
+    yffa=str(ffa)
+
+    f_fin=yffa+"/"+yffm+"/"+yffd
+
     fi=datetime.strptime(f_ini,"%Y/%m/%d")
     ff=datetime.strptime(f_fin,"%Y/%m/%d")
     f3=fi-ff
@@ -64,7 +77,7 @@ async def Consulta_calendario(f_ini: str, f_fin: str,t_habitacion: str,n_persona
                 else:
                     print("Si hay disponibilidad")
                     return("si hay disponibilidad para la habitacion: ",t_habitacion," en la fecha inicial: ",f_ini," y fecha final: ",f_fin,"para: ",n_personas," personas")
-
+                
 ######################################      DILIGENCIA RESERVA      ###########################################
 
 @api.post("/crear/reserva")
