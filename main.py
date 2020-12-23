@@ -196,7 +196,7 @@ origins=["http://localhost.tiangolo.com",
          "https://localhost.tiangolo.com",
          "http://localhost",
          "http://localhost:8080",
-        "https://backh0tel.herokuapp.com"]
+        "https://hotelfinal.herokuapp.com"]
 
 api.add_middleware(
     CORSMiddleware, allow_origins=origins, allow_credentials = True,
